@@ -1,0 +1,15 @@
+[Sun Jul 10 23:17:00.032984 2022] [authz_core:error] [pid 9104:tid 1932] [client 127.0.0.1:64641] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/
+[Sun Jul 10 23:17:00.059148 2022] [authz_core:error] [pid 9104:tid 1936] [client 127.0.0.1:64640] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/favicon.ico, referer: http://php-learn.com/
+[Sun Jul 10 23:18:35.680459 2022] [authz_core:error] [pid 9104:tid 1936] [client 127.0.0.1:64688] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/
+[Sun Jul 10 23:18:35.696553 2022] [authz_core:error] [pid 9104:tid 1936] [client 127.0.0.1:64688] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/favicon.ico, referer: http://php-learn.com/
+[Sun Jul 10 23:18:36.445825 2022] [authz_core:error] [pid 9104:tid 1936] [client 127.0.0.1:64689] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/
+[Sun Jul 10 23:18:45.788138 2022] [authz_core:error] [pid 2232:tid 1888] [client 127.0.0.1:64690] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/
+[Sun Jul 10 23:18:45.794908 2022] [authz_core:error] [pid 2232:tid 1888] [client 127.0.0.1:64690] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/favicon.ico, referer: http://php-learn.com/
+[Sun Jul 10 23:18:46.911459 2022] [authz_core:error] [pid 2232:tid 1888] [client 127.0.0.1:64691] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/
+[Sun Jul 10 23:18:46.924329 2022] [authz_core:error] [pid 2232:tid 1888] [client 127.0.0.1:64691] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/favicon.ico, referer: http://php-learn.com/
+[Sun Jul 10 23:18:47.470251 2022] [authz_core:error] [pid 2232:tid 1888] [client 127.0.0.1:64692] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/
+[Sun Jul 10 23:18:47.884522 2022] [authz_core:error] [pid 2232:tid 1888] [client 127.0.0.1:64692] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/
+[Sun Jul 10 23:19:17.721807 2022] [authz_core:error] [pid 2232:tid 1888] [client 127.0.0.1:64705] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/
+[Sun Jul 10 23:19:17.747740 2022] [authz_core:error] [pid 2232:tid 1884] [client 127.0.0.1:64706] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/favicon.ico, referer: http://php-learn.com/
+[Sun Jul 10 23:20:58.368711 2022] [authz_core:error] [pid 14772:tid 1916] [client 127.0.0.1:64734] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/
+[Sun Jul 10 23:20:58.407698 2022] [authz_core:error] [pid 14772:tid 1880] [client 127.0.0.1:64735] AH01630: client denied by server configuration: D:/php-1234/php-learn/www/favicon.ico, referer: http://php-learn.com/

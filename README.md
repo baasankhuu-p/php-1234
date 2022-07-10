@@ -192,11 +192,63 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 
 ```
 
-## Lesson 3 -  [Ажиллах орчноо бэлтгэх] windows дээр apache виртуал хост тохируулах шалгах 
+## Lesson 3 - [Ажиллах орчноо бэлтгэх] windows дээр apache виртуал хост тохируулах шалгах 
 ```C
     
     1. C: disk -> xampp -> xampp-control.exe файлыг taskbar-луугаа оруулчна аа //Байнга ашиглах учир
     2. C: disk -> xampp -> htdocs /* defaulf sites */
-    3. C: disk -> xampp -> apache -> conf -> extra -> httpd-vhosts.conf үүнийг VS code-ээрээ нээнэ. /*<virtaulhost >*/ энэд байсан өгөгдлийг өөрчилнө бусдын устгах ж.нь: ## тэмдэгт устгах /*</virtaulhost >*/
+    3. C: disk -> xampp -> apache -> conf -> extra -> httpd-vhosts.conf үүнийг VS code-ээрээ нээнэ. /*<virtaulhost > энэд байсан өгөгдлийг өөрчилнө бусдын устгах ж.нь: ## тэмдэгт устгах </virtaulhost >*/
+    өөрийн вэбэд тохируулна
+    4. xampp-аа нээж apache->conf->Apache(httpd.conf) FIND(htdocs)
+    <Directory>....</Directory> хуулж аваад 
+    /*<virtaulhost > Энэд хийж өгнө өө </virtaulhost >*/
+
+    OR Example
+    /*
+    <VirtualHost *:80>
+        ServerAdmin bsk68270@gmail.com
+        DocumentRoot "D:\php-1234\php-learn\www"
+        ServerName php-learn.com
+        ServerAlias www.php-learn.com
+        ErrorLog "D:\php-1234\php-learn\logs\error.log"
+        CustomLog "D:\php-1234\php-learn\logs\access.log" common
+        <Directory "D:\php-1234\php-learn\www">
+            #
+            # Possible values for the Options directive are "None", "All",
+            # or any combination of:
+            #   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
+            #
+            # Note that "MultiViews" must be named *explicitly* --- "Options All"
+            # doesn't give it to you.
+            #
+            # The Options directive is both complicated and important.  Please see
+            # http://httpd.apache.org/docs/2.4/mod/core.html#options
+            # for more information.
+            #
+            Options Indexes FollowSymLinks Includes ExecCGI
+
+            #
+            # AllowOverride controls what directives may be placed in .htaccess files.
+            # It can be "All", "None", or any combination of the keywords:
+            #   AllowOverride FileInfo AuthConfig Limit
+            #
+            AllowOverride All
+
+            #
+            # Controls who can get stuff from this server.
+            #
+            Require all granted
+        </Directory>
+
+    </VirtualHost>
+    */
+    5. сервэрээ асаачаад /*php-learn.com*/ нэртэй сервэрээр хандахын тулд system-дээ бүртгүүлнэ C:\Windows\System32\drivers\etc энэ замаар ороод hosts гэсэн файлыг дэлгэцрүү хуулж аваад өөрчилнө. Дараа нь үндсэн folder- луу хуулна /*Учир нь System32 дотор өөрчлөлт хийж болохгүй*/
+        Example:
+                127.0.0.1       localhost
+                ::1             localhost
+                127.0.0.1       php-learn.com
+```
+## Lesson 4 - [Ажиллах орчноо бэлтгэх] VS Code -ийг PHP-д зориулан тохируулах, нэмэлт extension-ууд суулгах 
+```C
 
 ```

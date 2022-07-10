@@ -191,9 +191,12 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
     3. Суулгасны дараа query browser - луу орж serverhost: 'localhost' username: 'root ' гэж бөглөнө
 
 ```
+
 ## Lesson 3 -  [Ажиллах орчноо бэлтгэх] windows дээр apache виртуал хост тохируулах шалгах 
 ```C
     
-    1.
+    1. C: disk -> xampp -> xampp-control.exe файлыг taskbar-луугаа оруулчна аа //Байнга ашиглах учир
+    2. C: disk -> xampp -> htdocs /* defaulf sites */
+    3. C: disk -> xampp -> apache -> conf -> extra -> httpd-vhosts.conf үүнийг VS code-ээрээ нээнэ. /*<virtaulhost >*/ энэд байсан өгөгдлийг өөрчилнө бусдын устгах ж.нь: ## тэмдэгт устгах /*</virtaulhost >*/
 
 ```

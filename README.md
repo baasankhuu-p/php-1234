@@ -250,5 +250,71 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 ```
 ## Lesson 4 - [Ажиллах орчноо бэлтгэх] VS Code -ийг PHP-д зориулан тохируулах, нэмэлт extension-ууд суулгах 
 ```C
-
+    1. ctrl+shipt+p find(open settings (JSON))
+        {
+            "editor.fontSize": 12,
+            "editor.fontFamily": "'DEJAVU SANS MONO',   monospace",
+            "editor.wordWrap": "on",
+            "editor.lineHeight": 28,
+            "editor.cursorBlinking": "smooth",
+            "explorer.openEditors.visible": 0,
+            "editor.suggestSelection": "first",
+            "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+            "workbench.colorCustomizations": {
+                "statusBar.background": "#263238",
+                "statusBar.debuggingBackground": "#263238",
+                "statusBar.noFolderBackground": "#333"
+            },
+            "editor.minimap.enabled": false,
+            "workbench.activityBar.visible": true,
+            "explorer.sortOrder": "type",
+            "files.trimFinalNewlines": true,
+            "editor.renderIndentGuides": true,
+            "workbench.editor.highlightModifiedTabs": false,
+            // "files.autoSave": "onFocusChange",
+            "[javascript]": {
+                "editor.defaultFormatter": "esbenp.prettier-vscode"
+            },
+            "editor.suggestSelection": "first",
+            "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+            "git.ignoreMissingGitWarning": true,
+            "liveServer.settings.donotShowInfoMsg": true,
+            "explorer.confirmDelete": false,
+            //"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "javascript.updateImportsOnFileMove.enabled": "always",
+            "explorer.confirmDragAndDrop": false,
+            "diffEditor.ignoreTrimWhitespace": true,
+            "liveServer.settings.donotVerifyTags": true,
+            "terminal.integrated.fontFamily": "MesloLGS NF",
+            "terminal.external.osxExec": "hyper",
+            "terminal.integrated.shell.osx": "/bin/zsh",
+            "git.enableSmartCommit": true,
+            "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+            "workbench.startupEditor": "newUntitledFile",
+            "[html]": {
+                "editor.defaultFormatter": "vscode.html-language-features"
+            },
+            "workbench.colorTheme": "One Dark Pro Nord",
+            "editor.formatOnSave": false,
+            // Enable per-language
+            "[php]": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+            },
+            "window.zoomLevel": 3
+        }
+    2. Extension
+        - Atom One Dark
+        - Auto Close Tag
+        - Auto Rename Tag
+        - Bracket Pair Colorizer
+        - Color Info
+        - Format HTML in PHP
+        - MySQL
+        - Path Intellisense
+        - PHP Intelephense
+        - PHP Debug
+        - PHP Namespace Resolver
+        - phpfmt - PHP formatter
+            /*error гарна ийм үед Environment->Environmetn Variables->Path(System Variables)->new->(C:\xampp\php)*/
 ```

@@ -100,7 +100,7 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 
 # PHP Сургалт
 
-## Lesson 1
+## Lesson 1 - PHP сургалтанд тавтай морил, энэ сургалтаар та юу сурах вэ?
 ```C
     1. Ажиллах орчноо тохируулах
     
@@ -181,4 +181,13 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
         - Сагсанд хийх худалдан авах
         - Имейл илгээх 
         - Сервэрт байрлуулах
+```
+
+## Lesson 2 - [Ажиллах орчноо бэлтгэх] windows дээр xampp, mysql gui tool суулгах
+```C
+    
+    1. Xampp суулгах ` https://www.apachefriends.org/ `
+    2. mysql gui tool суулгах ` https://downloads.mysql.com/archives/gui/ `
+    3. Суулгасны дараа query browser - луу орж serverhost: 'localhost' username: 'root ' гэж бөглөнө
+
 ```

@@ -457,5 +457,117 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 ```
 ## Lesson 15 - [php үндэс] Тогтмол зарлах, тогтмолыг хэрхэн хэрэглэх тухай
 ```C
+    1. inc хавтас(Folder) үүсгэх
+        <?php
+        require "./inc/header.php";
+
+        require "./inc/footer.php"
+        ?>
+    2. define ашиглах
+        - define('HOME','/Library/WebServer');
+            echo HOME;/*output:/Library/WebServer
+            HOME = 'asvasv';//error;
+            */
+    3. const ашиглах
+        - const PI = 3.14; 
+            echo PI;//output: 3.14;
+    4. Predefined constants
+        - PHP_INT_MAX, PHP_INT_MIN,PHP_VERSION ... гэх мэт;
+   
+```
+
+## Lesson 16 - [php үндэс] Magic constants ашиглах, require файл руу мэдээлэл дамжуулах
+```C
+    1. Magic constants
+        - echo __DIR__; гэх мэт// тухайн файлын замыг харуулдаг
+    2. include файлаас хувьсагч тогтмол ашиглах
+    3. require файлруу хувьсагч дамжуулах
+```
+
+## Lesson 17 - [php үндэс] Php арифметик операторууд болон тэдгээрийн товч бичиглэлүүд
+```C
+    1. Арифметик операторууд, эсрэг утга олгох
+        - $a = 3; $b = 7; 
+            echo $a+$b;//output: 10;
+            echo $a-$b;//output: 4;
+            echo $a*$b;//output: 21;
+            echo $a/$b;//output: 0.4...;
+        - $a = 3; $b = 2; 
+            echo $b ** 10;//output: 2^10;
+            echo $b ** $a;//output: 2^3;
+            echo -$a//output: -3;
+
+    2. Хаалт ашиглах, бодох дараалал
+        - $a = 3; $b = 2; echo ($a + $b) - 2*2// output: (3+2)-2*2 = 1;
+        - $a = 3; $b = 2; echo $a + $b*2 - 2*2// output: 3+2*2-2*2 = 3;
+    3. Үлдэгдэл бодох
+        - $a = 4; $b = 2; echo $a % $b; //output: 0
+        - $a = 4; $b = 2; echo $a / $b; //output: 2
+    4. Нэмэгдүүлэх, хорогдуулах
+        - $a = 3; echo $a++;//output:3
+        - $a = 3; echo ++$a;//output:4
+        - $a = 3; echo $a--;//output:3
+        - $a = 3; echo --$a;//output:2
+    5. Logic эсрэг
+        - $isValid = false; $isValid = !$isValid var_dump($isValid)//output:true;
+```
+
+## Lesson 18 - [php үндэс] Reference буюу заалттай танилцая
+```C
+    1. Тэмдэгт мөрийг залгах   
+        - $name = "saraa"; $name = $name . " naraa" echo $name;//output: saraa naraa
+    2. reference буюу заалт
+        - $a = 23; $b = $a; echo "$a $b";//output:23 23;
+        - $a = 28; echo "$a $b";//output:28 23;
+        + $a = 23; $b = &$a; 
+        $b = 15;
+        echo "$a $b";//output:15 15;
+```
+
+## Lesson 19 - [php үндэс] if else нөхцөл шалгалтыг ашиглах
+```C
+    $a = 10;
+    1. Логик операторууд ба if
+        - if($a==10)
+            {echo "Хэвийн"}
+    2. else
+        - if($a==10)
+            {echo "Хэвийн"} 
+        else 
+            {echo "Хэвийн бус"}
+    3. else if
+        - 
+        if($a==10)
+            {echo "Хэвийн"} 
+        else if($a>10) 
+            {echo "Халуун"} 
+        else
+            {echo "Хүйтэн"}
+```
+
+## Lesson 20 - [php үндэс] Массивтай танилцацгаая, тоон болон тэмдэгт индекст массив, стандарт бус индекс ашиглах
+```C
+    1. Массив зарлах
+        - $students = array("1","2","3","4","5","6","7","8");
+        - $months = ["jun","feb","mar"];
+    2. Массивын индекс
+        - echo $months[1];//output:feb
+    3. Тоон бус индекс ашиглах
+        - $phones = ["naraa"=>"95622020","ganaa"=>"88452412"];
+        echo $phones["naraa"];//output:95622020
+        echo $phones["bataa"];//output:warning: undefined array key "bataa";
+    4. Стандарт бус индекс
+        - $fruits = [2=>"samar",7=>"guzeelzgene","toor"];
+        echo $fruits[7]//output:guzeelzgene
+    5. Тэмдэгт мөртэй индексээр хандах
+        $name = "Саранцэцэг";
+        echo $name[2]//output:? /*р үсэг монгол үсэг учир танихгүй байна*/
+        $name = "Jordan";
+        echo $name[3]//output:d
+    6. Массивийн доторхыг хэвлэж харах
+        print_f($phones)
+```
+## Lesson 21 [php үндэс] Массивыг хэвлэж үзүүлэх arr функцийг бичиж скриптүүддээ холбох нь
+```C
 
 ```

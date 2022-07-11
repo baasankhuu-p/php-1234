@@ -436,4 +436,26 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 
 ## Lesson 14 - [php үндэс] Тэмдэгт мөрийг heredoc, nowdoc ашиглан үүсгэх, php дотроос html кодыг хэрхэн бичих тухай
 ```C
+    1. heredoc
+        $lname = "1";
+        $fname = "2";
+        $fullname = {$lname}ийн $fname;
+
+        - $rows = <<< MSG
+        $fullname = $lname . "ийн" . $fname;
+        echo $fullname;123456789
+        //output 1ийн 2 = 1ийн 2; echo 1ийн 2;123456789
+        MSG;
+    2. nowdoc
+        - $msg = <<< 'MSG'
+        $fullname = $lname . "ийн" . $fname;
+        echo $fullname;
+        <div>123456</div>
+        /*output $fullname = $lname . "ийн" . $fname; echo $fullname;
+        123456*/
+        MSG;
+```
+## Lesson 15 - [php үндэс] Тогтмол зарлах, тогтмолыг хэрхэн хэрэглэх тухай
+```C
+
 ```

@@ -1,14 +1,7 @@
-<html>
-
-<head>
-
-</head>
-
-<body>
-    <h1>Hi</h1>
-    <?php
-    asfdasfas
-    ?>
-</body>
-
-</html>
+<?php
+require "./header.php";
+?>
+<h1>Hello</h1>
+<?php
+require "./footer.php"
+?>

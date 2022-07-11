@@ -248,6 +248,7 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
                 ::1             localhost
                 127.0.0.1       php-learn.com
 ```
+
 ## Lesson 4 - [Ажиллах орчноо бэлтгэх] VS Code -ийг PHP-д зориулан тохируулах, нэмэлт extension-ууд суулгах 
 ```C
     1. ctrl+shipt+p find(open settings (JSON))
@@ -318,6 +319,7 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
         - phpfmt - PHP formatter
             /*error гарна ийм үед Environment->Environmetn Variables->Path(System Variables)->new->(C:\xampp\php)*/
 ```
+
 ## Lesson 5 - [Ажиллах орчноо бэлтгэх] Mac дээр xampp суулгах 
 ```C
     ...etc
@@ -358,4 +360,54 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 
 ## Lesson 9 - [php үндэс] Вэб хэрхэн ажилладаг вэ? PHP ямар үүрэгтэй оролцдог вэ?
 ```C
+Компьютер бүр API хаягтай байна Ж.нь `127.0.0.1`
+// hosts, DNS(domain name server), Apache, Mysql, Browser
+```
+
+## Lesson 10 - [php үндэс] Эхнийхээ php скриптийг бичицгээе! header.php, footer.php файлуудыг ашиглах
+```C
+    1. <?php ... энэд php үйлдлээ хийнэ ?>
+    2. Header, Footer хэсгээ өөр газар хадгалчаад түүнийгээ -require ашиглаж холбоно
+        - require "./header.php"
+        - require "./footer.php"
+    
+```
+
+## Lesson 11 - [php үндэс] PHP бүхэл, бутархай, бүүл хувьсагчид, тайлбар хэрхэн бичих, loosely typed хэл
+```C
+    1.  PHP тайлбар бичих 
+        -/* Олон мөр */,
+        -// нэг мөр,
+        -# нэг мөр
+        
+    2. PHP is loosely typed language
+    3. Хувьсагч дүрэм, case sensitive, бүхэл тоон хувьсагч, var_dump
+        - Хувьсагч ($name)
+        - case sensitive ($name, $Name хоёр өөр хувьсагч)
+    4. бутархай тоон хувьсагч, var_dump
+        - PHP өөрөө мэдэрдэг
+        $a = 1.24 echo $a;//OUTPUT: 1.24
+        - var_dump нь хувьсагчийн төрлийг харуулдаг
+        $a = 1.24 var_dump($a);//output: float(1.24)
+    5. boolean хувьсагч
+        $isValid = false;
+        var_dump($isValid)//output: bool(false)
+    6. null утга
+        - null утга
+        var_dump(p)//output: null =>/*p хувьсагч байхгүй*/
+```
+
+## Lesson 12 - [php үндэс] PHP дээр алдааг гаргадаг болгох, php хаах таг, short tag
+```C
+    1. зарлагдаагүй хувьсагч, алдааг үзүүлэх тохиргоо
+        - алдааг үзүүлэх тохиргоо (ini_set("display_errors",1))
+        - алдааг нуух тохиргоо (ini_set("display_errors",0))
+    2. print vs echo /*ижилхэн гэхдээ ялгаа нь echo олон хувьсагчийг хэвэлж болно*/
+    3. PHP short tag
+        - <?= "asdsd" ?>//output: asdsd;
+```
+
+## Lesson 13 - [php үндэс] Тэмдэгт мөр зарлах, тэмдэгт мөр дотор хувьсагч оруулах
+```C
+
 ```

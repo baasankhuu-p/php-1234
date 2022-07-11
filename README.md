@@ -577,11 +577,81 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
         print_r($array);
         echo '</pre>';
     }
-    arr($$phone);
+    arr($phone);
 ```
 
 ## Lesson 22 - [php үндэс] Массивтай ажиллах үндсэн үйлдлүүд, массивтай ажилладаг функцүүд
 ```C
+    $data = [1,2,3,4,5];
     1. Массив эсэхийг шалгах, is_array
-    2. Тоон хязгаараар 
+        echo is_array($data);//output: bool(true);
+    2. Тоон хязгаараар массив үүсгэх, range
+    
+    $number = range(1,100);//1-100;
+    3. Массивийн элементийг тоолох, count, sizeof
+        echo sizeof($number);//output:100;
+    4. Массивийн элементийг тэмдэгт мөр дотор хэвлэх
+        $name = "Баяр";
+        $students = ["neg","hoyor","Сүх","dorj"]
+        echo "$name бол хүн харин $students[2] хүн мөн үү"//output: Баяр бол хүн харин Сүх хүн мөн үү
+    5. Массивыг задлах extract,explode
+        $data = ["one"=>001,"two"=>002,"three"=>003];
+        extract($data);
+        echo $one;//output: 001;
+        
+        $str = "one two three four";
+        $strfull = explode(" ",$str);//strfull["one", "two", "three", "four"];
+
+    6. Массивт элемент нэмэх
+        $data = [01,02,05];
+        $data[] = 04;//[01,02,05,04]
+```
+
+## Lesson 23 - [php үндэс] Массивтай ажиллах функцүүд : range, sort, array_slice, array_values, array_merge, array_search
+```C
+    1. Массивын төгсгөлийн элементийг авах, array_pop
+        $data = [1,2,3,4,5,6];
+        echo array_pop($data);//output:6
+    2. Массиваас элемент хасах, индекс нь алга болно
+        $data = [0=>"one",1=>"two",2=>"three",3=>"five",4=>"four"];
+        unset($data[1]);//$data[0=>"one",2=>"three",3=>"five",4=>"four"]
+    3. Массивыг дахин индексжлэх, array_values
+        $data = array_values($data)//$data[0=>"one",1=>"three",2=>"five",3=>"four"]
+    4. Массивыг эрэмблэх sort, rsort, ksort
+        $months = ["jun","feb","mar"];
+        sort($months);
+        echo $monthsl;//output: Array( [0] => fed [1] => jun [2] => mar);
+
+        ksort($months);
+        echo $monthsl;//output: Array( [2] => fed [1] => jun [0] => mar);
+
+        rsort($months);
+        echo $monthsl;//output: Array( [0] => mar [1] => jun [2] => fed);
+
+        krsort($months);
+        echo $monthsl;//output: Array( [2] => mar [1] => jun [0] => fed);
+    5. Массивийг холих (shuffle)
+        $nums = range(1,6);
+        shuffle($nums);//shuffle 5 4 2 1 3 6 e.x
+    6. Массивын индексүүдийг эсвэл утгуудыг авах, array_keys, array_values
+        $data = [0=>"one",1=>"two",2=>"three",3=>"five",4=>"four"];
+        $ners = array_keys($data);
+        echo $ners;//output: 0 1 2 3 4
+        $ners = array_values($data);
+        echo $ners;//"one","two","three","five","four"]
+    7. Массивуудыг нийлүүлэх, array_merge
+        $a = range(1,5);$b = range(8,15);
+        $c = array_merge($a,$b);//1 2 3 4 5 8 9 10 11 12 13 14 15
+    8. Массивын хэсгийг тасалж авах, array_slice
+        $data = [0=>"one",1=>"two",2=>"three",3=>"five",4=>"four"];
+        $newArr = array_slice($data,1,3);//two three five
+    9. Массиваас хайх, array_search, in_array
+        $data = [0=>"one",1=>"two",2=>"three",3=>"five",4=>"four"];
+        echo array_search("five",$data);//output:3 
+        in_array //boolean true false
+```
+
+## Lesson 24 - [php үндэс] Глобал массив $_SERVER ийн тухай. Foreach давталыг ашиглаж сурцгаая!
+```C
+
 ```

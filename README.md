@@ -409,5 +409,31 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 
 ## Lesson 13 - [php үндэс] Тэмдэгт мөр зарлах, тэмдэгт мөр дотор хувьсагч оруулах
 ```C
+    1. '' ба "" тэмбэгт мөрүүд
+        - $header = "hello1"; echo $header;//output:hello1;
+        - $header = '<div style="width:50;height:20">header</div>';//output:header;
+        - $txt="three o'clock"; echo $txt;//three o'clock
+        - $txt='three o\'clock'; echo $txt;//three o'clock
+    2. Тэмдэгт мөрийг залгах
+        - $fname = "Boldoo";
+        $lname = "Dorj";
+        $fullname = $fname+$lname;
+        echo $fulname;//output:BoldooDorj
+        - $fname = "Boldoo";
+        $lname = "Dorj";
+        $fullname = $fname . " -ийн " . $lname;
+        echo $fullname;//output:Boldoo-ийн Dorj
+        
+    3. Тэмдэгт мөр дотор хувьсагч оруулах
+        - $fname = "Boldoo";
+        $lname = "Dorj";
+        $fullname = "$fname-ийн $ lname";
+        echo $fullname;//Boldoo-ийн Dorj 
+        - $fname = "Болд";
+        $lname = "Дорж";
+        $fullname = {$fname}ийн $lname//output:Болдийн Дорж
+```
 
+## Lesson 14 - [php үндэс] Тэмдэгт мөрийг heredoc, nowdoc ашиглан үүсгэх, php дотроос html кодыг хэрхэн бичих тухай
+```C
 ```

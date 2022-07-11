@@ -318,3 +318,12 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
         - phpfmt - PHP formatter
             /*error гарна ийм үед Environment->Environmetn Variables->Path(System Variables)->new->(C:\xampp\php)*/
 ```
+## Lesson 5 - [Ажиллах орчноо бэлтгэх] Mac дээр xampp суулгах 
+```C
+...etc
+```
+
+## Lesson 6 - [Ажиллах орчноо бэлтгэх] Mac дээр apache виртуал хост тохируулах
+```C
+...etc
+```

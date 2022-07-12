@@ -455,6 +455,7 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
         123456*/
         MSG;
 ```
+
 ## Lesson 15 - [php үндэс] Тогтмол зарлах, тогтмолыг хэрхэн хэрэглэх тухай
 ```C
     1. inc хавтас(Folder) үүсгэх
@@ -473,7 +474,6 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
             echo PI;//output: 3.14;
     4. Predefined constants
         - PHP_INT_MAX, PHP_INT_MIN,PHP_VERSION ... гэх мэт;
-   
 ```
 
 ## Lesson 16 - [php үндэс] Magic constants ашиглах, require файл руу мэдээлэл дамжуулах
@@ -691,6 +691,45 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 ```
 
 ## Lesson 26 - [php үндэс]  while, do while давталтуудыг сурцгаая
+```C
+    1. while loop
+        $i = 1;
+        while($i<=100){
+            echo $i++ . ' ';// output: 1 2 3 .. 100;
+        }
+    2. do while loop
+    $i = 1;
+    do{
+        echo $i++ . ' ';// output: 1 2 3 .. 100;
+    }
+    while($i<=100);
+```
+
+## Lesson 27 - [php үндэс] ternary оператор, ?? операторыг хэрэглэх нь
+```C
+    - { ? }
+            $shoo = 5;    $urdun = $shoo > 3 ? "hojloo" : "hojigdloo";
+    - { ?? }
+        $a = $b;//$b = null default uydee
+        $a = $b ?? 15;
+        echo $a;//output: 15; $b нь null учир 15 гэсэн утга авна
+```
+
+## Lesson 28 - [php үндэс] switch оператортой танилцая
+```C
+    $dun = 80;
+    switch($dun){
+        case $dun < 60: $unelgee = 'F';break;
+        case $dun < 70: $unelgee = 'D';break;
+        case $dun < 80: $unelgee = 'C';break;
+        case $dun < 90: $unelgee = 'B';break;
+        case $dun <= 100: $unelgee = 'A';break;
+        default: $unelgee = 'Todorhoigui'
+    }
+    echo $unelgee;//output: B;
+```
+
+## Lesson 29 - [php үндэс] Тэмдэгт мөртэй ажиллах, substr, str_replace, mb_ функцийн ач холбогдол
 ```C
 
 ```

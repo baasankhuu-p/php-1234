@@ -782,3 +782,26 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 
 ## Lesson 31 - [mysql] Mysql Query browser дээр баз үүсгэж users, balance table-үүдийг үүсгэн гадаад түлхүүр тохируулах
 ```C
+    query browser нэвтрэх
+    create new schema
+```
+
+## Lesson 32 - [mysql] Mysql workbench ашиглан Mac дээр өгөгдлийн сангаа үүсгэцгээе
+```C
+```
+
+ ## Lesson 33 - [mysql] VS Code Mysql extention ашиглаж өгөгдлийн сан руугаа хандацгаая
+ ```C
+```
+ 
+ ## Lesson 34 - [mysql] Mysql үүссэн түүх, PHP хэлнээс өгөгдлийн сантай ажиллах үндсэн интерфэйсүүдийн тухай
+ ```C
+ ```
+
+## Lesson 35 - [mysql] mysql өгөгдлийн сантай PHP ээс холбогдох, холбогдох үеийн алдаануудтай ажиллах
+ ```C
+    phpinfo();
+    $conn = mysqli_connect('127.0.0.1', 'root', '', 'php_learn');
+ ```
+
+## Lesson 36 - [mysql] mysql ээс өгөгдөл унших, php-ийн STORE RESULTSET болон USE RESULTSET горимын ялгааг ойлгох

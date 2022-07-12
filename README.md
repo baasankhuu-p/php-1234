@@ -731,5 +731,54 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 
 ## Lesson 29 - [php үндэс] Тэмдэгт мөртэй ажиллах, substr, str_replace, mb_ функцийн ач холбогдол
 ```C
+    $mn = "Php хэл "д
+    $en = '<h1 style="color:green">PHP ==> Hypertext Processor</h1>'
+    
+    1. strlen
+        echo strlen($mn);//output: 11 урт
+    2. trim
+        echo strlen(trim($mn));//output: 10 хоёр талд нь байсан хоосон зайг танан
+    3. strtolower, strtoupper, mb_
+        echo strtoupper($en);//output: PHP ==> HYPERTEXT PROCESSOR
+        echo strtolower($en);//output: php ==> hypertext processor
+    4. substr, mb_substr
+        echo substr($mn,0,3);//output: Php
+        echo mb_substr($mn,4,3);//output: xэл
+        echo mb_substr($mn,-1,1);//output: л -1 гэвэл хойноос нь авна
+    5. str_repeat
+        $mn = str_repeat("java ",5);
+        echo $mn//output:java java java java java 5 удаа давтан
 
 ```
+
+## Lesson 30 - [php үндэс] Тэмдэгт мөртэй ажиллах, strpos, strstar, htmlspecialchars, implode, explode функцүүд
+```C
+    1. str_replace
+        $mn = "Php хэл ";
+        $en = '<h1 style="color:green">PHP ==> Hypertext Processor</h1>'
+        $newEng = str_replace('h1','h4',$en);//'<h4 style="color:green">PHP ==> Hypertext Processor</h4>'
+        
+        $newEng = str_replace('h1','h4',$en);//'<h4 style="color:green"h1 h1 h1>PHP ==> Hypertext Processor</h4>'
+        echo $count;//output: 5
+
+    2. strpos, stripos, strstr
+        $mn = "PХэлхэлhp хэл ";
+        - echo mb_strpos($mn,"хэл");//output:4
+        - echo mb_stripos($mn,"хэл");//output:1 учир нь том жижиг ялгаагүй
+        - echo mb_strstr($mn,"хэл");//output: hp хэл 
+        - echo mb_stristr($mn,"хэл");//output: хэлhp хэл 
+        
+    3. htmlspecialchars
+        $en = '<h1 style="color:green">PHP ==> Hypertext Processor</h1>'
+        echo $en;//output: PHP ==> Hypertext Processor
+        echo htmlspecialchars($en);//output: <h1 style="color:green">PHP ==> Hypertext Processor</h1>
+    4. implode, join, explode
+        - explode(тэмдэгт мөрийг массив рүү)
+        $str = "one two three";
+        $arr = explode(" " , $str);["one" "two" "three"];
+        - impode(массив-ыг тэмдэгт мөр болгоно)
+        $newstr = implode('-', $arr);//one-two-three     
+```
+
+## Lesson 31 - [mysql] Mysql Query browser дээр баз үүсгэж users, balance table-үүдийг үүсгэн гадаад түлхүүр тохируулах
+```C

@@ -805,3 +805,49 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
  ```
 
 ## Lesson 36 - [mysql] mysql ээс өгөгдөл унших, php-ийн STORE RESULTSET болон USE RESULTSET горимын ялгааг ойлгох
+```C
+    $resultset = mysqli_query($conn, "select * from users");
+    echo mysqli_num_rows($resultset);
+```
+
+## Lesson 37 - [mysql] Өгөгдлийн сан руу бичих, устгах, өөрчлөлт хийх нь [insert, update, delete]
+```C
+    mysqli_errno() - DB алдаа гарвал дугаарыг харуулна
+    - insert()
+        mysqli_query($conn, "insert into users values(null,'dorj','95959595','123456789','2020-05-01')");
+    - update()
+        mysqli_query($conn, "update users set name = 'bayarmaa', phone=95959494,create_date='2022/12/15' where idusers = 2");
+    - delete()
+        mysqli_query($conn, "delete from users where idusers=4");
+```
+
+## Lesson 38 -  [mysql] SQL Injection халдлага гэж юу вэ? Хялбар халдлагын жишээг хийж харцгаая
+```C
+    Select * from users where pass='ascva' or 2=2; -- ascasc ascas
+    
+    //injection халдлага "" ''
+    $password = "123asd4 'or 3=3 --'"; //Халдлагад өртлөө
+    $query = "select * from users where pass = '$password'";
+    echo $query . '<br>';
+    $rs = mysqli_query($con, $query);
+    $row = mysqli_fetch_row($rs);
+    if ( /* $row */$row !== null) {arr($row);
+        foreach ($row as $key => $item) {
+            echo $key . '=>' . $item . '<br>';
+        }} else {
+        echo 'Нууц үг буруу байна';
+    }
+```
+
+## Lesson 39 - [mysql] Prepared statement гэж юу вэ, select дээр бүгдээрээ ашиглаж үзэцгээе!
+```C
+    1. mysqli_prepare//query бэлтгэдэг функц
+
+    2. mysqli_stmt_bind_param
+    3. mysqli_stmt_execute
+    4. mysqli_stmt_bind_result
+    5. mysqli_stmt_fetch
+    6. mysqli_stmt_close
+    7. mysqli_stmt_errno,mysqli_stmt_error
+    8. Prepared statement 2 давуу тал
+```

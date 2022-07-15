@@ -1105,5 +1105,10 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
             _select($stmt, $count, $sql, null, null, ...$bindParams);
         }
     LOGIN PHP
-        
+    _selectAll($stmt, $count, "select idusers,name,pass from users",
+    $col1, $col2, $col3);
+```
+## Lesson 51 - [web] Санхүүгийн вэбдээ ашиглах супер темплэйтийг framework дээрээ хуулж ажиллуулж танилцацгаая!
+```C
+    https://1234.mn/upload/course/files/20210612_47template.zip
 ```

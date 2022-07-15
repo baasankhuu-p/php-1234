@@ -1064,3 +1064,46 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
         //Hoyulang ni close hiine
         _close_con($stmt);
 ```
+
+## Lesson 49 - [framework] Өгөгдлийн санд өгөгдөл бичих, өөрчлөх, устгах үүрэгтэй _exec функцийг бичицгээе!
+```C
+    LOGIN PHP
+        // $success = _exec(
+        //     "update users set name = ?,pass = ? where idusers=?",
+        //     'ssi',
+        //     ['Баяраа', '1234', 3], $count
+        // );
+
+        // $success = _exec(
+        //     "delete from users where idusers=?",
+        //     'i',
+        //     [30], $count
+        // );
+        // $success = _exec(
+        //     "insert into users set name = ?,pass = ?",
+        //     'ss',
+        //     ['Бат', '1234'], $count
+        // );
+    DB PHP
+        function _exec($sql, $type, $sqlParam, &$count)
+        {
+            global $con;
+            $stmt = mysqli_prepare($con, $sql);
+            mysqli_stmt_bind_param($stmt, $type, ...$sqlParam);
+            $success = mysqli_stmt_execute($stmt);
+            $count = mysqli_stmt_affected_rows($stmt);
+            _close_stmt($stmt);
+            return $success;
+        }
+```
+
+## Lesson 50 - [framework] Параметергүй query-г ажиллуулах _selectAll функцийг бичицгээе!
+```C
+    DB PHP
+        function _selectAll(&$stmt, &$count, $sql, &...$bindParams)
+        {
+            _select($stmt, $count, $sql, null, null, ...$bindParams);
+        }
+    LOGIN PHP
+        
+```

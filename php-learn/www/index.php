@@ -12,7 +12,7 @@ if (empty($page)) {
     require ROOT . '/pages/home.php';
 } else {
     $script = ROOT . "/pages$page.php";
-    echo $script . "<br>";
+    //echo $script . "<br>";
     if (file_exists($script)) {
         require $script;
     } else {

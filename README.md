@@ -842,12 +842,122 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 ## Lesson 39 - [mysql] Prepared statement гэж юу вэ, select дээр бүгдээрээ ашиглаж үзэцгээе!
 ```C
     1. mysqli_prepare//query бэлтгэдэг функц
-
+        $stmt = mysqli_prepare($con, "select * from users where idusers>?");
     2. mysqli_stmt_bind_param
+        $filterId = 0;
+        mysqli_stmt_bind_param($stmt, 'i', $filterId);
+        /*
+            i =>	corresponding variable has type integer
+            d =>	corresponding variable has type double
+            s =>	corresponding variable has type string
+            b =>	corresponding variable is a blob and will be sent in packets
+        */
     3. mysqli_stmt_execute
+        mysqli_stmt_execute($stmt);
     4. mysqli_stmt_bind_result
+        mysqli_stmt_bind_result($stmt, $id, $name, $phone, $pass, $date);
     5. mysqli_stmt_fetch
+        while (mysqli_stmt_fetch($stmt)) {
+            echo "<br>" . $name . ' => ' . $id . ' => ' . $pass . ' => ' . $date;
+        }
+        OR
+            mysqli_stmt_fetch($stmt);
+            echo "<br>" . $name . ' => ' . $id . ' => ' . $pass . ' => ' . $date;
     6. mysqli_stmt_close
-    7. mysqli_stmt_errno,mysqli_stmt_error
+        mysqli_stmt_close($stmt);
+    7. mysqli_stmt_errno,mysqli_stmt_error//Prepared алдааг олох
     8. Prepared statement 2 давуу тал
+        //Хамгаалагдаэна
 ```
+
+## Lesson 40 - [mysql] Mysqli unbuffered resultset ийг ашиглаж сурцгаая!
+```C
+    1. mysqli unbuffered resultset
+         //mysqli_query($con, "slect * from users", MYSQLI_USE_RESULT);-
+```
+
+## Lesson 41 - [mysql] Prepared statement ашиглан олон өгөгдлийг insert хийх, update хийх
+```C
+    1. $data бэлтгэх
+        $data = [[30, 'bat', 9594, 12], [31, 'bdmaa', 959449, 'b2a0d1a8']];
+    2. mysqli_prepare
+        - insert();
+            $stmt1 = mysqli_prepare($con, "insert into users values(?,?,?,?)");
+        - update();
+            $stmt1 = mysqli_prepare($con, "update users set pass = ? where idusers = ?");
+    3. mysqli_stmt_bind_param
+        - insert(); 
+            mysqli_stmt_bind_param($stmt1, 'isis', $id, $name, $phone, $pass);
+        - update();
+            $updatepass = "123A";
+            $if_Id = 31;
+            mysqli_stmt_bind_param($stmt1, 'si', $updatepass,$if_Id);
+    4. mysqli_stmt_execute
+    - insert(); 
+        foreach ($data as $user) {
+            $id = $user[0];
+            $name = $user[1];
+            $phone = $user[2];
+            $pass = $user[3];
+            echo "<br>$id  $name  $phone $pass";
+            mysqli_stmt_execute($stmt1);
+        }
+    - update();
+        mysqli_stmt_execute($stmt1);
+    5. mysqli_stmt_close
+        mysqli_stmt_close($stmt1);
+
+```
+## Lesson 42 - [framework] Шинээр виртуаль хостоо фрэймворкдоо зориулан тохируулцгаая
+```C
+    - Төсөл өө эхлүүлнэ ээ
+```
+## Lesson 43 - [framework] Front controller гэж юу вэ, түүний давуу тал. Үүсгэж туршицгаая!
+```C
+    $page = $_GET['page'];
+    echo $page;
+    require '../pages/' . $page . '.php';//гэж URL үүсгэж php темплейтийг ажиллуулж болно
+```
+
+## Lesson 44 - [framework] URL дээрээс index.php хэсгийг арилгаж цэвэрхэн URL-тэй болцгооё
+```C
+    echo $_SERVER['REQUEST_URI'];
+
+    echo '<pre>';
+    print_r($_SERVER);
+
+    echo $_SERVER['QUERY_STRING'];
+    echo '<br>';
+
+    echo $_GET['name'];
+    /*.htaccess гэсэн файлд
+    
+    <IfModule mod_rewrite.c>
+        RewriteEngine on
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^(.*)$ index.php [PT,L]
+    </IfModule>
+    
+    тохиргоог хийж өгнө
+    */
+```
+## Lesson 45 - [framework] Фронт контроллероо бичиж ажиллуулж туршицгаая!
+```C
+    define('ROOT', dirname(dirname(__FILE__)));
+    //PATH: php-learn.com/users/home?id=123&type=машин&price=24&color=улаан
+
+    //front controller бусад скриптийг URL хамааруулж дуудна
+    //URL
+    $script = $_SERVER['REDIRECT_URL'] . '.php';
+    echo '<br>SCRIPT: ' . ROOT . '/pages' . $script;
+    require ROOT . '/pages' . $script;
+    function dd($arr)
+    {
+        echo '<pre>';
+        print_r($arr);
+        exit;
+    }
+```
+
+## Lesson 46 - [framework] Фронт контроллерийг сайжруулж байхгүй url дээр 404 хуудас үзүүлдэг болгох

@@ -960,4 +960,22 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
     }
 ```
 
-## Lesson 46 - [framework] Фронт контроллерийг сайжруулж байхгүй url дээр 404 хуудас үзүүлдэг болгох
+## Lesson 46 - [framework] Фронт контроллерийг сайжруулж байхгүй url дээр 404 хуудас үзүүлдэг болгох'
+```C
+    $page = @$_SERVER['REDIRECT_URL'];
+    if (empty($page)) {
+        require ROOT . '/pages/home.php';
+    } else {
+        $script = ROOT . "/pages$page.php";
+        echo $script . "<br>";
+        if (file_exists($script)) {
+            require $script;
+        } else {
+            require ROOT . '/pages/404.php';
+        }
+    }
+```
+## Lesson 47 - [framework] Фрэймворк дотроо Prepared statement ашигласан _select, _fetch функцүүдийрг нэмэх
+```C
+    
+```

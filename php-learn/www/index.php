@@ -1,12 +1,21 @@
 <?php
+ini_set('display_errors', 1);
+
 define('ROOT', dirname(dirname(__FILE__)));
 //PATH: php-learn.com/users/home?id=123&type=машин&price=24&color=улаан
-
-//front controller бусад скриптийг URL хамааруулж дуудна
-//URL
-$script = $_SERVER['REDIRECT_URL'] . '.php';
-echo '<br>SCRIPT: ' . ROOT . '/pages' . $script;
-require ROOT . '/pages' . $script;
+// $script = ROOT . '/pages' . $_SERVER['REDIRECT_URL'] . '.php';
+$page = @$_SERVER['REDIRECT_URL'];
+if (empty($page)) {
+    require ROOT . '/pages/home.php';
+} else {
+    $script = ROOT . "/pages$page.php";
+    echo $script . "<br>";
+    if (file_exists($script)) {
+        require $script;
+    } else {
+        require ROOT . '/pages/404.php';
+    }
+}
 function dd($arr)
 {
     echo '<pre>';

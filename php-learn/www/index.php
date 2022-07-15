@@ -2,6 +2,9 @@
 ini_set('display_errors', 1);
 
 define('ROOT', dirname(dirname(__FILE__)));
+
+require ROOT . '/inc/conf.php';
+require ROOT . '/inc/db.php';
 //PATH: php-learn.com/users/home?id=123&type=машин&price=24&color=улаан
 // $script = ROOT . '/pages' . $_SERVER['REDIRECT_URL'] . '.php';
 $page = @$_SERVER['REDIRECT_URL'];

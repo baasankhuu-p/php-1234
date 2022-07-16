@@ -1126,5 +1126,25 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 ```
 ## Lesson 54 - [web] sign-up-save скриптээс өгөгдлийг mysql рүү бичих, өгөгдлийг ариутгах post функцийг фрэймворкд нэмж ашиглах
 ```C
-
+    - sign-up-save.php
+        $username = _post('username', 50);
+        $phone = _post('phone', 15);
+        $email = _post('email', 150);
+        $userpassword = _post('userpassword', 50);
+        /*extract($_POST);//Postoor orj irsen key-iin huvisagchid hadgalna  */
+        _exec(
+            "insert into users set name=?, pass=?, phone=?, email=?",
+            'ssss',
+            [$username, $userpassword, $phone, $email],
+            $count);
+    -db.php
+        function _post($data, $length)
+        {
+            $value = $_POST[$data];
+            if (!is_null($length) && mb_strlen($value) > $length) {
+                $value = mb_substr($data, 0, $length);
+                echo "<script>alert('$data нэртэй индексийн урт нь $length ээс хэтэрсэн тул тухайн уртаар нь хэмжиж бүртгэв.')</script>";
+            }
+            return $value;
+        }
 ```

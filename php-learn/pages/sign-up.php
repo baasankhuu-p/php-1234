@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="5">
+    <meta http-equiv="refresh" content="20">
     <title><?=ucfirst(DOMAIN)?> | Хувийн санхүү</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />

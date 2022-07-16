@@ -1112,3 +1112,19 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 ```C
     https://1234.mn/upload/course/files/20210612_47template.zip
 ```
+## Lesson 52 - [web] Бүртгүүлэх хуудасны интерфэйсийг хийх, DOMAIN тогтмолыг фрэймворкдоо нэмэх нь
+```C
+    Тогтмол хадгалах хэсэгтээ нэмж өгчөөд дуудаж ашиглана
+    const DOMAIN = 'php-learn.com';
+    Example: <?=DOMAIN?>,ucfirst(DOMAIN),strtoupper(DOMAIN) гэх мэт?>
+```
+## Lesson 53 - [web] Нэг скриптээс нөгөө рүү өгөгдлийг POST, GET ашиглан дамжуулах тухай
+```C
+    <form class="form-horizontal my-4" action="/sign-up-save" method="POST">//POST нь URL дээр харуулдаггүй GET нь URL дээрээс уншиж болдог
+        <input type="text" class="form-control" value="Баасанхүү" id="username" name="username" placeholder="Нэрээ оруулна уу">
+    </form>
+```
+## Lesson 54 - [web] sign-up-save скриптээс өгөгдлийг mysql рүү бичих, өгөгдлийг ариутгах post функцийг фрэймворкд нэмж ашиглах
+```C
+
+```

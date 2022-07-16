@@ -1,10 +1,10 @@
+<?php session_start();?>
 <!doctype html>
 <html lang="en">
 
 <head>
 
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="20">
     <title><?=ucfirst(DOMAIN)?> | Хувийн санхүү</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
@@ -39,6 +39,14 @@
                             <h4 class="text-muted font-size-18 mb-2 text-center">Тавтай морил !</h4>
                             <p class="text-muted text-center">Та өөрийн бүртгэлтэй эрхээр нэвтэрнэ үү.</p>
 
+                            <?php if (!empty($_SESSION['errors'])): ?>
+                            <ul>
+                                <?php foreach ($_SESSION['errors'] as $error): ?>
+                                <li style="color:red"><?=$error?></li>
+                                <?php endforeach;?>
+                            </ul>
+                            <?php unset($_SESSION['errors']);endif;?>
+
                             <form class="form-horizontal my-4" method="POST" action="/sign-in-do">
 
                                 <div class="form-group">
@@ -48,8 +56,8 @@
                                             <span class="input-group-text" id="basic-addon1"><i
                                                     class="far fa-user"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" value="99455432" id="username"
-                                            name="username" placeholder="Дугаараа оруулна уу">
+                                        <input type="text" class="form-control" value="99455432" id="phone" name="phone"
+                                            placeholder="Дугаараа оруулна уу">
                                     </div>
                                 </div>
 
@@ -91,7 +99,7 @@
                         <div class="m-2 text-center bg-light p-4 text-primary">
                             <h4 class="">Танд бүртгэд байхгүй юу ? </h4>
                             <p class="font-size-13"> <span><?=ucfirst(DOMAIN)?></span> нэвтрэх эрх нээх</p>
-                            <a href="#" class="btn btn-primary waves-effect waves-light">Үнэгүй бүртгүүлэх</a>
+                            <a href="/sign-up" class="btn btn-primary waves-effect waves-light">Үнэгүй бүртгүүлэх</a>
                         </div>
                         <div class="mt-4 text-center">
                             <p class="mb-0">© 2022 <?=ucfirst(DOMAIN)?> | Бүтээсэн сурагч <i

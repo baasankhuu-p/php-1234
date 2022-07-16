@@ -908,10 +908,12 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
         mysqli_stmt_close($stmt1);
 
 ```
+
 ## Lesson 42 - [framework] Шинээр виртуаль хостоо фрэймворкдоо зориулан тохируулцгаая
 ```C
     - Төсөл өө эхлүүлнэ ээ
 ```
+
 ## Lesson 43 - [framework] Front controller гэж юу вэ, түүний давуу тал. Үүсгэж туршицгаая!
 ```C
     $page = $_GET['page'];
@@ -942,6 +944,7 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
     тохиргоог хийж өгнө
     */
 ```
+
 ## Lesson 45 - [framework] Фронт контроллероо бичиж ажиллуулж туршицгаая!
 ```C
     define('ROOT', dirname(dirname(__FILE__)));
@@ -1108,22 +1111,26 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
     _selectAll($stmt, $count, "select idusers,name,pass from users",
     $col1, $col2, $col3);
 ```
+
 ## Lesson 51 - [web] Санхүүгийн вэбдээ ашиглах супер темплэйтийг framework дээрээ хуулж ажиллуулж танилцацгаая!
 ```C
     https://1234.mn/upload/course/files/20210612_47template.zip
 ```
+
 ## Lesson 52 - [web] Бүртгүүлэх хуудасны интерфэйсийг хийх, DOMAIN тогтмолыг фрэймворкдоо нэмэх нь
 ```C
     Тогтмол хадгалах хэсэгтээ нэмж өгчөөд дуудаж ашиглана
     const DOMAIN = 'php-learn.com';
     Example: <?=DOMAIN?>,ucfirst(DOMAIN),strtoupper(DOMAIN) гэх мэт?>
 ```
+
 ## Lesson 53 - [web] Нэг скриптээс нөгөө рүү өгөгдлийг POST, GET ашиглан дамжуулах тухай
 ```C
     <form class="form-horizontal my-4" action="/sign-up-save" method="POST">//POST нь URL дээр харуулдаггүй GET нь URL дээрээс уншиж болдог
         <input type="text" class="form-control" value="Баасанхүү" id="username" name="username" placeholder="Нэрээ оруулна уу">
     </form>
 ```
+
 ## Lesson 54 - [web] sign-up-save скриптээс өгөгдлийг mysql рүү бичих, өгөгдлийг ариутгах post функцийг фрэймворкд нэмж ашиглах
 ```C
     - sign-up-save.php
@@ -1200,6 +1207,7 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
             $count);
             redirect("/home");
 ```
+
 ## Lesson 57 - [web] Session болон Cookie гэж юу вэ? Тэдгээрийн үүргийг HTTP протоколын үүргийн хамт ойлгоцгооё!
 ```C
     Тайлбар хичээл
@@ -1213,6 +1221,7 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
     $_SESSION['phone'] = $phone;
     $_SESSION['email'] = $email;
 ```
+
 ## Lesson 59 - [web] Бүртгүүлэхэд үүссэн алдааг session-р дамжуулж бүртгэлийн хуудсанд үзүүлэх
 ```C
     
@@ -1232,6 +1241,7 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
         }
         ?>
 ```
+
 ## Lesson  60 - [web] html дотор php кодыг дизайнеруудад зориулж template байдлаар бичих нь (if, endif, foreach, endforeach)
 ```C
     //if, while, foreach, and switch 
@@ -1254,10 +1264,64 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
         $errors[] = 'Та үйлчилгээний нөхцөлийг заавал уншиж бөглөх шаардлагатай';
     }
 ```
+
 ## Lesson  62 - [web] Логин хуудсыг бэлтгэж sign-in-do.php хуудас руу мэдээлэл дамжуулах
 ```C
     <form class="form-horizontal my-4" method="POST" action="/sign-in-do">
         input>name,value,POST,... өөрчлөлт мөн html ээ өөрчилнө
     </form>
 ```
+
 ## Lesson  63 - [web] Логин хуудас дээр хэрэглэгчийн мэдээллийг шалгаж зөв бол нэвтрүүлэх нь
+```C
+    SIGN-IN-DO.PHP
+        <?php
+        session_start();
+        // phone, userpassword хүлээж авна
+        $phone = _post('phone', 15);
+        $userpassword = _post('userpassword', 50);
+        //Алдааг хадгалах массив үүсгэнэ
+        $errors = [];
+        //Хэрэв phone password алдаатай бол алдааг session-д бичээд login хуудасруу үсэргэнэ
+        // if (mb_strlen($phone) < 8) {
+        //     $errors[] = 'Утасны дугаар буруу байна';
+        // }
+        // if (mb_strlen($userpassword) < 4) {
+        //     $errors[] = 'Нууц үгээ зөв оруулна уу';
+        // }
+        // if (sizeof($errors) > 0) {
+        //     $_SESSION['errors'] = $errors;
+        //     redirect('/sign-in');
+        // }
+        _selectRow($stmt, $count, "select name, pass, phone from users where phone=? and pass=?", 'ss', [$phone, $userpassword], $username, $password, $phone);
+
+        /**
+        * 1) session эхлүүлнэ
+        * 2) session-д хэрэглэгчийн мэдээллийг бичнэ
+        * 3) home хуудас руу буцаж үсэргэнэ
+        */
+
+        if (!empty($username)) {
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
+            $_SESSION['phone'] = $phone;
+            redirect("/user/home");
+        }
+        //Хэрэв мэдээлэл байхгүй бол
+        //Алдааны мэдээллийг session-д бичнэ
+        else {
+            $_SESSION['errors'] = ['Таны нууц үг эсвэл дугаар буруу байна'];
+            //Логин хуудас руу буцааж үсэргэнэ
+            redirect('/sign-in');
+        }
+    SIGN-IN.PHP
+        <?php if (!empty($_SESSION['errors'])): ?>
+            <ul>
+                <?php foreach ($_SESSION['errors'] as $error): ?>
+                <li style="color:red"><?=$error?></li>
+                <?php endforeach;?>
+            </ul>
+        <?php unset($_SESSION['errors']);endif;?>
+```
+
+## Lesson  64 - 

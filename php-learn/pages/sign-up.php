@@ -7,7 +7,6 @@ session_start();
 <head>
 
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="20">
     <title><?=ucfirst(DOMAIN)?> | Хувийн санхүү</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
@@ -138,7 +137,7 @@ session_start();
                         <div class="m-2 text-center bg-light p-4 text-primary">
                             <h4 class="">Та бүртгэлтэй хэрэглэгч үү? </h4>
                             <p class="font-size-13">Яг одоо <span><?=DOMAIN?> </span> руугаа нэвтрэх</p>
-                            <a href="#" class="btn btn-primary waves-effect waves-light">Нэвтрэх</a>
+                            <a href="/sign-in" class="btn btn-primary waves-effect waves-light">Нэвтрэх</a>
                         </div>
                         <div class="mt-4 text-center">
                             <p class="mb-0">© 2022 <?=ucfirst(DOMAIN)?> | Бүтээсэн сурагч <i

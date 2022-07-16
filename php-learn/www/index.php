@@ -19,6 +19,21 @@ if (empty($page)) {
         require ROOT . '/pages/404.php';
     }
 }
+function _post($data, $length)
+{
+    $value = $_POST[$data];
+    if (!is_null($length) && mb_strlen($value) > $length) {
+        $value = mb_substr($data, 0, $length);
+        echo "<script>alert('$data нэртэй индексийн урт нь $length ээс хэтэрсэн тул тухайн уртаар нь хэмжиж бүртгэв.')</script>";
+    }
+    return $value;
+}
+
+function redirect($url)
+{
+    header("Location: $url"); //Хуудасрүү үсэрнэ
+    exit;
+}
 function dd($arr)
 {
     echo '<pre>';

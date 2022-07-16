@@ -1143,8 +1143,60 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
             $value = $_POST[$data];
             if (!is_null($length) && mb_strlen($value) > $length) {
                 $value = mb_substr($data, 0, $length);
-                echo "<script>alert('$data нэртэй индексийн урт нь $length ээс хэтэрсэн тул тухайн уртаар нь хэмжиж бүртгэв.')</script>";
+                echo "<script>alert('SECURITY ALERT: $data нэртэй индексийн урт нь $length ээс хэтэрсэн тул тухайн уртаар нь хэмжиж бүртгэв.')</script>";
             }
             return $value;
         }
+```
+
+## Lesson 55 - [web] Бүртгэхийн өмнө төрөл бүрийн шалгалтуудыг гүйцэтгэх нь
+```C
+    //Aldaag massiv-d hadgalna
+    //Хэрэглэгчийн нэр шаардлага хангаж буй эсэх
+    $errors = [];
+    if (mb_strlen($username) < 4) {
+        $errors[] = 'Нэр хэт богино байна';
+    }
+    //ийм утастай хэрэглэгч бүртгэлтэй эсэх
+    _select($stmt, $count, 'select count(*) from users where phone = ?', 's', [$phone], $numberOfPhone);
+    _fetch($stmt);
+    if ($numberOfPhone > 0) {
+        $errors[] = 'Дугаар бүртгэгдсэн байна';
+    }
+    //ийм имейлтэй хэрэглэгч бүртгэлтэй эсэх
+    _select($stmt, $count, 'select count(*) from users where email = ?', 's', [$email], $numberOfemail);
+    _fetch($stmt);
+    if ($numberOfemail > 0) {
+        $errors[] = 'Email бүртгэгдсэн байна';
+    }
+    //Нууц үг хоорондоо таарч буй эсэх
+    if ($userpassword != $confirmpassword) {
+        $errors[] = 'Нууц үг хоорондоо таарахгүй байна';
+    }
+    if (sizeof($errors) > 0) {
+        dd($errors);
+    } else {
+        _exec(
+            "insert into users set name=?, pass=?, phone=?, email=?",
+            'ssss',
+            [$username, $userpassword, $phone, $email],
+            $count);
+    }
+```
+
+## Lesson 56 - [web] Бүртгэж дууссаны дараа home хуудас руу үсэрдэг болгоё
+```C
+    INDEX PHP
+        function redirect($url)
+        {
+            header("Location: $url"); //Хуудасрүү үсэрнэ
+            exit;
+        }
+    SIGN UP SAVE PHP
+        _exec(
+            "insert into users set name=?, pass=?, phone=?, email=?",
+            'ssss',
+            [$username, $userpassword, $phone, $email],
+            $count);
+            redirect("/home");
 ```

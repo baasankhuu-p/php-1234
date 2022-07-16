@@ -56,13 +56,3 @@ function _fetch($stmt)
 {
     return mysqli_stmt_fetch($stmt);
 }
-
-function _post($data, $length)
-{
-    $value = $_POST[$data];
-    if (!is_null($length) && mb_strlen($value) > $length) {
-        $value = mb_substr($data, 0, $length);
-        echo "<script>alert('$data нэртэй индексийн урт нь $length ээс хэтэрсэн тул тухайн уртаар нь хэмжиж бүртгэв.')</script>";
-    }
-    return $value;
-}

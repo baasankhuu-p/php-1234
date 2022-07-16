@@ -38,16 +38,28 @@
                             <h4 class="text-muted font-size-18 mb-2 text-center">Үнэгүй бүртгүүл</h4>
                             <p class="text-muted text-center">Өөрийн санхүүг хялбар хөтлөөрэй.</p>
 
-                            <form class="form-horizontal my-4" action="index.html">
+                            <form class="form-horizontal my-4" action="/sign-up-save" method="POST">
+
+                                <div class="form-group">
+                                    <label for="username">Нэр</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i
+                                                    class="far fa-user"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" value="Баасанхүү" id="username"
+                                            name="username" placeholder="Нэрээ оруулна уу">
+                                    </div>
+                                </div>
 
                                 <div class="form-group">
                                     <label for="username">Утас</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1"><i
-                                                    class="far fa-user"></i></span>
+                                                    class="fas fa-mobile-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="username"
+                                        <input type="text" class="form-control" value="99455432" id="phone" name="phone"
                                             placeholder="Утасаа оруулна уу">
                                     </div>
                                 </div>
@@ -59,8 +71,8 @@
                                             <span class="input-group-text" id="basic-addon2"><i
                                                     class="far fa-envelope"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="email"
-                                            placeholder="Имейл хаягаа оруулна уу">
+                                        <input type="text" class="form-control" value="bsk68270@gmail.com" id="email"
+                                            name="email" placeholder="Имейл хаягаа оруулна уу">
                                     </div>
                                 </div>
 
@@ -71,8 +83,8 @@
                                             <span class="input-group-text" id="basic-addon3"><i
                                                     class="fas fa-lock"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" id="userpassword"
-                                            placeholder="Нууц үгээ оруулна">
+                                        <input type="password" class="form-control" value="12345678" id="userpassword"
+                                            name="userpassword" placeholder="Нууц үгээ оруулна">
                                     </div>
                                 </div>
 
@@ -83,15 +95,16 @@
                                             <span class="input-group-text" id="basic-addon4"><i
                                                     class="fas fa-key"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" id="confirmpassword"
+                                        <input type="password" class="form-control" value="12345678"
+                                            id="confirmpassword" name="confirmpassword"
                                             placeholder="Нууц үгээ давтан оруулна уу">
                                     </div>
                                 </div>
 
                                 <div class="form-group mt-4">
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                        <label class="custom-control-label" for="customControlInline">
+                                        <input type="checkbox" class="custom-control-input" id="terms" name="terms">
+                                        <label class="custom-control-label" for="terms">
                                             <span class="font-13 text-muted mb-0">Бүртгүүлснээр би <?=DOMAIN?> сайтын
                                                 <a href="#">үйлчилгээний нөхцөлийг</a></span> хүлээн зөвшөөрч байна
                                         </label>

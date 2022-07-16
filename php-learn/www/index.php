@@ -19,7 +19,7 @@ if (empty($page)) {
         require ROOT . '/pages/404.php';
     }
 }
-function _post($data, $length)
+function _post($data, $length = null)
 {
     $value = $_POST[$data];
     if (!is_null($length) && mb_strlen($value) > $length) {
@@ -34,8 +34,11 @@ function redirect($url)
     header("Location: $url"); //Хуудасрүү үсэрнэ
     exit;
 }
-function dd($arr)
+function dd($arr, $exit = false)
 {
     echo '<pre>';
     print_r($arr);
+    if ($exit) {
+        exit;
+    }
 }

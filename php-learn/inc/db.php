@@ -35,6 +35,11 @@ function _select(&$stmt, &$count, $sql, $types, $sqlParams, &...$bindParams)
     mysqli_stmt_bind_result($stmt, ...$bindParams);
     return $stmt;
 }
+function _selectRow(&$stmt, &$count, $sql, $types, $sqlParams, &...$bindParams)
+{
+    _select($stmt, $count, $sql, $types, $sqlParams, ...$bindParams);
+    _fetch($stmt);
+}
 function _selectAll(&$stmt, &$count, $sql, &...$bindParams)
 {
     _select($stmt, $count, $sql, null, null, ...$bindParams);

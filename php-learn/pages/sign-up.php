@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -35,8 +38,17 @@
                         </h3>
 
                         <div class="px-2 mt-2">
-                            <h4 class="text-muted font-size-18 mb-2 text-center">Үнэгүй бүртгүүл</h4>
+                            <h4 class="text-muted font-size-18 mb-2 text-center">Яг одоо үнэгүй бүртгүүлээд</h4>
                             <p class="text-muted text-center">Өөрийн санхүүг хялбар хөтлөөрэй.</p>
+                            <!-- if, while, foreach, and switch -->
+                            <!-- endif; endwhile, endforeach, and endswitch -->
+                            <?php if (!empty($_SESSION['errors'])): ?>
+                            <ul>
+                                <?php foreach ($_SESSION['errors'] as $error): ?>
+                                <li style="color:red"><?=$error?></li>
+                                <?php endforeach;?>
+                            </ul>
+                            <?php unset($_SESSION['errors']);endif;?>
 
                             <form class="form-horizontal my-4" action="/sign-up-save" method="POST">
 

@@ -1200,3 +1200,64 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
             $count);
             redirect("/home");
 ```
+## Lesson 57 - [web] Session болон Cookie гэж юу вэ? Тэдгээрийн үүргийг HTTP протоколын үүргийн хамт ойлгоцгооё!
+```C
+    Тайлбар хичээл
+    PHP нь session_start() функцээр хийдэг үйлдлүүд  Анхаар ??? <?php>-ийн урд нь html болон хоосон зай байж болохгүй
+```
+
+## Lesson 58 - [web] Session ашиглаж бүртгүүлсэн хүний мэдээллийг home хуудас дээр гаргах
+```C
+    session_start();
+    $_SESSION['username'] = $username;
+    $_SESSION['phone'] = $phone;
+    $_SESSION['email'] = $email;
+```
+## Lesson 59 - [web] Бүртгүүлэхэд үүссэн алдааг session-р дамжуулж бүртгэлийн хуудсанд үзүүлэх
+```C
+    
+    SIGNUP SAVE PHP
+        if (sizeof($errors) > 0) {
+            $_SESSION['errors'] = $errors;
+            redirect("/sign-up");
+        }
+    SIGNUP PHP
+        <?php
+        if (!empty($_SESSION['errors'])) {
+            echo '<ul>';
+            foreach ($_SESSION['errors'] as $error) {
+                echo "<li style=\"color:red\">$error</li>";
+            }
+            echo '</ul>';
+        }
+        ?>
+```
+## Lesson  60 - [web] html дотор php кодыг дизайнеруудад зориулж template байдлаар бичих нь (if, endif, foreach, endforeach)
+```C
+    //if, while, foreach, and switch 
+    //endif; endwhile, endforeach, and endswitch 
+    <?php if (!empty($_SESSION['errors'])): ?>
+        <ul>
+            <?php foreach ($_SESSION['errors'] as $error): ?>
+            <li style="color:red"><?=$error?></li>
+            <?php endforeach;?>
+        </ul>
+    <?php
+    unset($_SESSION['errors']);//Улаан алдааг HTML ээс цэвэрлэх
+    endif;?>
+```
+
+## Lesson  61 - [web] Хэрэглэгч бүртгэх үед үйлчилгээний нөхцлийг нэмж шалгах нь
+```C
+    $terms = _post('terms');
+    if (empty($terms)) {
+        $errors[] = 'Та үйлчилгээний нөхцөлийг заавал уншиж бөглөх шаардлагатай';
+    }
+```
+## Lesson  62 - [web] Логин хуудсыг бэлтгэж sign-in-do.php хуудас руу мэдээлэл дамжуулах
+```C
+    <form class="form-horizontal my-4" method="POST" action="/sign-in-do">
+        input>name,value,POST,... өөрчлөлт мөн html ээ өөрчилнө
+    </form>
+```
+## Lesson  63 - [web] Логин хуудас дээр хэрэглэгчийн мэдээллийг шалгаж зөв бол нэвтрүүлэх нь

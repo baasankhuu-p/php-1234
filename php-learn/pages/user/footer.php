@@ -36,6 +36,17 @@
 
 <script src="/assets/js/app.js"></script>
 
+<script src="/assets/libs/select2/js/select2.min.js"></script>
+<script src="/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="/assets/libs/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<script src="/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+<script src="/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+
+<!-- form mask -->
+<script src="/assets/libs/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+
+<script src="/assets/js/pages/form-advanced.init.js"></script>
+
 </body>
 
 </html>

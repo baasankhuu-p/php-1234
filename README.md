@@ -1336,5 +1336,28 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 
 ## Lesson 65 - [web] Header, footer файлуудаас хэрэггүйг нь хасч монгол болгоё
 ```C
-    Үүнээс хойш github ruu push hiitsgeey
+    Үүнийг github ruu push hiitsgeey
+```
+
+## Lesson 66 - [web] Logout хийх скриптийг бичиж турших, navbar хэсгийг тусд нь файлд гаргах нь
+```C
+    USER PAGE -> LOG OUT PAGE үсэрнэ{
+        session_unset();
+        session_destroy();
+        $_SESSION = array();
+        
+        redirect('/sign-in'); эсвэл header("Location: /sign-in");
+    }
+```
+
+## Lesson 67 - [web] Логин хийгээгүй хүмүүс home хуудас болон бусад хамгаалалттай хуудсыг үзэхээс хамгаалах нь
+```C
+    - sign-in-do.php
+        //ene orond bazad hadgalsan type orj irj bolno jsheelbel admin,user geh met
+        $_SESSION['type'] = 'user';
+    - header.php - д хийж өгсөн өөр хэсэгт хийж болно
+    if ($_SESSION['type'] !== 'user') {
+        $_SESSION['errors'] = ['Та өөрийн эрхээр заавал нэвтэрнэ үү'];
+        redirect('/sign-in');
+    }
 ```

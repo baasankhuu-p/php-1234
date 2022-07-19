@@ -28,6 +28,8 @@ if (!empty($username)) {
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
     $_SESSION['phone'] = $phone;
+    //ene orond bazad hadgalsan type orj irj bolno jsheelbel admin,user geh met
+    $_SESSION['type'] = 'user';
     redirect("/user/home");
 }
 //Хэрэв мэдээлэл байхгүй бол

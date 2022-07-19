@@ -1326,5 +1326,15 @@ PHP хэл нь 1995 онд бий болсноосоо эхлэн дэлхий 
 
 ## Lesson  64 - [web] Home хуудас дээр темплэйтээс загвар оруулах, header, footer файлуудыг бичих
 ```C
-    
+    <?php
+        require 'header.php';
+    ?>
+
+    <?php
+        require 'footer.php';
+```
+
+## Lesson 65 - [web] Header, footer файлуудаас хэрэггүйг нь хасч монгол болгоё
+```C
+    Үүнээс хойш github ruu push hiitsgeey
 ```

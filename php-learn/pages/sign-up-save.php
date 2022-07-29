@@ -52,6 +52,11 @@ if (sizeof($errors) > 0) {
         'ssss',
         [$username, $userpassword, $phone, $email],
         $count);
+    // _exec(
+    //     "insert into users set name=?, pass=?, phone=?, email=?, type = 'Админ'",
+    //     'ssss',
+    //     [$username, $userpassword, $phone, $email],
+    //     $count);
     $_SESSION['username'] = $username;
     $_SESSION['phone'] = $phone;
     $_SESSION['email'] = $email;

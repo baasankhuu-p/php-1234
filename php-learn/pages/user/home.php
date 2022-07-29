@@ -61,11 +61,12 @@ td>i:hover {
                                 <tr>
 
                                     <th scope="row" class="px-0 pl-1">1</th>
-                                    <td class="px-0 pr-1"><input type="text" class="form-control form-control-sm"
-                                            id="datepicker" name="ognoo">
+                                    <td class="px-0 pr-1"><input value="2022-07-30" type="text"
+                                            class="form-control form-control-sm" id="datepicker" name="ognoo">
                                     </td>
-                                    <td class="px-0 pr-1"><input class="form-control form-control-sm"
-                                            style="width: 250px;" type="text" name="utga" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input value="Дэлгүүрээс хүнс авлаа"
+                                            class="form-control form-control-sm" style="width: 250px;" type="text"
+                                            name="utga" placeholder=""></td>
                                     <td class="px-0 pr-1">
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck02"
@@ -73,34 +74,34 @@ td>i:hover {
                                             <label class="custom-control-label" for="customCheck02"></label>
                                         </div>
                                     </td>
-                                    <td class="px-0 pr-1"><input name="torol" class="form-control form-control-sm"
-                                            type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="hariltsagch" class="form-control form-control-sm"
-                                            type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="mongo_usuh" class="form-control form-control-sm"
-                                            type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="mongo_buurah"
+                                    <td class="px-0 pr-1"><input value="Дэлгүүр" name="torol"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="hurungu_usuh"
+                                    <td class="px-0 pr-1"><input value="хүнс" name="hariltsagch"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="hurungu_buurah"
+                                    <td class="px-0 pr-1"><input value="" name="mongo_usuh"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="baraa_usuh" class="form-control form-control-sm"
-                                            type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="baraa_buurah"
+                                    <td class="px-0 pr-1"><input value="28000" name="mongo_buurah"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="avlaga_usuh" class="form-control form-control-sm"
-                                            type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="avlaga_buurah"
+                                    <td class="px-0 pr-1"><input value="" name="hurungu_usuh"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="ur_usuh" class="form-control form-control-sm"
-                                            type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="us_buurah" class="form-control form-control-sm"
-                                            type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="orlogo" class="form-control form-control-sm"
-                                            type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input name="zarlaga" class="form-control form-control-sm"
-                                            type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input value="" name="hurungu_buurah"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input value="" name="baraa_usuh"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input value="" name="baraa_buurah"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input value="" name="avlaga_usuh"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input value="" name="avlaga_buurah"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input value="" name="ur_usuh"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input value="" name="us_buurah"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input value="" name="orlogo"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input value="28000" name="zardal"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
                                     <td class="pt-3">
                                         <button type="submit" class="btn btn-instagram btn-sm p-1 ml-1">
                                             <i title="Хадгалах" class="ti-save mr-1 font-10"></i>

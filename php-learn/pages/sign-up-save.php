@@ -1,4 +1,3 @@
-amjilttai burtgegdlee
 <?php
 session_start();
 $username = _post('username', 50);
@@ -7,6 +6,7 @@ $email = _post('email', 150);
 $userpassword = _post('userpassword', 50);
 $confirmpassword = _post('confirmpassword', 50);
 $terms = _post('terms');
+
 /*extract($_POST);//Postoor orj irsen key-iin huvisagchid hadgalna  */
 //Aldaag massiv-d hadgalna
 //Хэрэглэгчийн нэр шаардлага хангаж буй эсэх
@@ -14,16 +14,27 @@ $errors = [];
 if (mb_strlen($username) < 4) {
     $errors[] = 'Нэр хэт богино байна';
 }
+// //ийм утастай хэрэглэгч бүртгэлтэй эсэх
+// _selectRow($stmt, $count, 'select count(*) from users where phone = ?', 's', [$phone], $numberOfPhone);
+// if ($numberOfPhone > 0) {
+//     $errors[] = "$phone Дугаар бүртгэгдсэн байна";
+// }
+// //ийм имейлтэй хэрэглэгч бүртгэлтэй эсэх
+// _selectRow($stmt, $count, 'select count(*) from users where email = ?', 's', [$email], $numberOfemail);
+// if ($numberOfemail > 0) {
+//     $errors[] = "$email Email бүртгэгдсэн байна";
+// }
+// //Нууц үг хоорондоо таарч буй эсэх
+// if ($userpassword != $confirmpassword) {
+//     $errors[] = 'Нууц үг хоорондоо таарахгүй байна';
+// }
 //ийм утастай хэрэглэгч бүртгэлтэй эсэх
 _selectRow($stmt, $count, 'select count(*) from users where phone = ?', 's', [$phone], $numberOfPhone);
-if ($numberOfPhone > 0) {
-    $errors[] = "$phone Дугаар бүртгэгдсэн байна";
-}
-//ийм имейлтэй хэрэглэгч бүртгэлтэй эсэх
 _selectRow($stmt, $count, 'select count(*) from users where email = ?', 's', [$email], $numberOfemail);
-if ($numberOfemail > 0) {
-    $errors[] = "$email Email бүртгэгдсэн байна";
+if ($numberOfPhone > 0 || $numberOfemail > 0) {
+    $errors[] = "Дугаар эсвэл имейл бүртгэгдсэн байна";
 }
+//ийм имейлтэй хэрэглэгч бүртгэлтэй эсэх+
 //Нууц үг хоорондоо таарч буй эсэх
 if ($userpassword != $confirmpassword) {
     $errors[] = 'Нууц үг хоорондоо таарахгүй байна';
@@ -37,7 +48,7 @@ if (sizeof($errors) > 0) {
     redirect("/sign-up");
 } else {
     _exec(
-        "insert into users set name=?, pass=?, phone=?, email=?",
+        "insert into users set name=?, pass=?, phone=?, email=?, type = 'Хэрэглэгч'",
         'ssss',
         [$username, $userpassword, $phone, $email],
         $count);

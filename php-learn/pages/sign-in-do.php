@@ -16,7 +16,7 @@ $errors = [];
 //     $_SESSION['errors'] = $errors;
 //     redirect('/sign-in');
 // }
-_selectRow($stmt, $count, "select name, pass, phone from users where phone=? and pass=?", 'ss', [$phone, $userpassword], $username, $password, $phone);
+_selectRow($stmt, $count, "select name, pass, phone, type from users where phone=? and pass=?", 'ss', [$phone, $userpassword], $username, $password, $phone, $type);
 
 /**
  * 1) session эхлүүлнэ
@@ -29,7 +29,7 @@ if (!empty($username)) {
     $_SESSION['password'] = $password;
     $_SESSION['phone'] = $phone;
     //ene orond bazad hadgalsan type orj irj bolno jsheelbel admin,user geh met
-    $_SESSION['type'] = 'user';
+    $_SESSION['type'] = $type;
     redirect("/user/home");
 }
 //Хэрэв мэдээлэл байхгүй бол

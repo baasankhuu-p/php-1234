@@ -5,6 +5,10 @@ td,
 th {
     font-size: 12px;
 }
+
+td>i:hover {
+    color: blueviolet;
+}
 </style>
 
 <div class="row">
@@ -19,6 +23,7 @@ th {
                 <div class="table-responsive">
                     <table class="table table-striped mb-0">
                         <thead>
+
                             <tr>
                                 <th class="px-0 pr-1"></th>
                                 <th class="px-0 pr-1">Огноо</th>
@@ -42,59 +47,67 @@ th {
                                 </th>
                                 <th class="px-0 pr-1">Авлага <i class="fa fa-arrow-down text-danger mr-1 font-10"></i>
                                 </th>
-                                <th class="px-0 pr-1">Өр <i class="fa fa-arrow-up text-success mr-1 font-10"></i></th>
-                                <th class="px-0 pr-1">Өр <i class="fa fa-arrow-down text-danger mr-1 font-10"></i></th>
+                                <th class="px-0 pr-1">Өр <i class="fa fa-arrow-up text-success mr-1 font-10"></i>
+                                </th>
+                                <th class="px-0 pr-1">Өр <i class="fa fa-arrow-down text-danger mr-1 font-10"></i>
+                                </th>
                                 <th class="px-0 pr-1">Орлого</th>
                                 <th class="px-0 pr-1">Зардал</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row" class="px-0 pl-1">1</th>
-                                <td class="px-0 pr-1"><input type="text" class="form-control form-control-sm"
-                                        id="datepicker">
-                                </td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" style="width: 250px;"
-                                        type="text" placeholder=""></td>
-                                <td class="px-0 pr-1">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck02"
-                                            data-parsley-multiple="groups" data-parsley-mincheck="2">
-                                        <label class="custom-control-label" for="customCheck02"></label>
-                                    </div>
-                                </td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="px-0 pr-1"><input class="form-control form-control-sm" type="text"
-                                        placeholder=""></td>
-                                <td class="pt-3"><i class="ti-save mr-1 font-10"></i></td>
-                            </tr>
+                            <form action="/user/record/new" method="post">
+                                <tr>
 
+                                    <th scope="row" class="px-0 pl-1">1</th>
+                                    <td class="px-0 pr-1"><input type="text" class="form-control form-control-sm"
+                                            id="datepicker" name="ognoo">
+                                    </td>
+                                    <td class="px-0 pr-1"><input class="form-control form-control-sm"
+                                            style="width: 250px;" type="text" name="utga" placeholder=""></td>
+                                    <td class="px-0 pr-1">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck02"
+                                                name="togtmol" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                                            <label class="custom-control-label" for="customCheck02"></label>
+                                        </div>
+                                    </td>
+                                    <td class="px-0 pr-1"><input name="torol" class="form-control form-control-sm"
+                                            type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="hariltsagch" class="form-control form-control-sm"
+                                            type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="mongo_usuh" class="form-control form-control-sm"
+                                            type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="mongo_buurah"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="hurungu_usuh"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="hurungu_buurah"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="baraa_usuh" class="form-control form-control-sm"
+                                            type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="baraa_buurah"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="avlaga_usuh" class="form-control form-control-sm"
+                                            type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="avlaga_buurah"
+                                            class="form-control form-control-sm" type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="ur_usuh" class="form-control form-control-sm"
+                                            type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="us_buurah" class="form-control form-control-sm"
+                                            type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="orlogo" class="form-control form-control-sm"
+                                            type="text" placeholder=""></td>
+                                    <td class="px-0 pr-1"><input name="zarlaga" class="form-control form-control-sm"
+                                            type="text" placeholder=""></td>
+                                    <td class="pt-3">
+                                        <button type="submit" class="btn btn-instagram btn-sm p-1 ml-1">
+                                            <i title="Хадгалах" class="ti-save mr-1 font-10"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </form>
                             <tr>
                                 <th scope="row" class="px-0 pl-1">1</th>
                                 <td class="px-0 pr-1">07/01</td>
@@ -116,8 +129,8 @@ th {
                                 <td></td>
                                 <td></td>
                                 <td class="table-danger">69,000</td>
-                                <td class="pt-3"><i class=" dripicons-document-edit mr-1"></i><i
-                                        class="ti-trash mr-1"></i></td>
+                                <td class="pt-3"><i title="Засах" class=" dripicons-document-edit mr-1"></i><i
+                                        title="Устгах" class="ti-trash mr-1"></i></td>
                             </tr>
 
                             <tr>
@@ -145,7 +158,8 @@ th {
                                 <td></td>
                                 <td class="table-success">750,000</td>
                                 <td></td>
-                                <td><i class=" dripicons-document-edit mr-1"></i><i class="ti-trash mr-1"></i></td>
+                                <td class="pt-3"><i title="Засах" class=" dripicons-document-edit mr-1"></i><i
+                                        title="Устгах" class="ti-trash mr-1"></i></td>
                             </tr>
                         </tbody>
                     </table>

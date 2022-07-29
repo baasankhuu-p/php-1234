@@ -1,5 +1,5 @@
 <?php session_start();
-if ($_SESSION['type'] !== 'user') {
+if ($_SESSION['type'] !== 'Хэрэглэгч' && $_SESSION['type'] !== 'Админ') {
     $_SESSION['errors'] = ['Та өөрийн эрхээр заавал нэвтэрнэ үү'];
     redirect('/sign-in');
 }
@@ -10,7 +10,7 @@ if ($_SESSION['type'] !== 'user') {
 <head>
 
     <meta charset="utf-8" />
-    <title><?=ucfirst(DOMAIN) . ' == == ' . $_SESSION['username']?></title>
+    <title><?=ucfirst(DOMAIN) . ' == ' . '== ' . $_SESSION['username']?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -68,11 +68,11 @@ if ($_SESSION['type'] !== 'user') {
                     <div class="d-none d-lg-inline-block">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-target="#search-wrap">
                             <a class="header-item" href="../landing/index.html" target="_blank">
-                                <i class="mdi mdi-airplane mr-2 font-size-16"></i><?=$_SESSION['phone']?>
+                                <i
+                                    class="mdi mdi-airplane mr-2 font-size-16"></i><?=$_SESSION['phone'] . ' <=> ' . $_SESSION['type']?>
                             </a>
                         </button>
                     </div>
-
                 </div>
 
                 <!-- Search input -->
@@ -215,7 +215,7 @@ if ($_SESSION['type'] !== 'user') {
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user" src="/assets/images/users/user-1.jpg"
+                            <img class="rounded-circle header-profile-user" src="/assets/images/users/user-5.jpg"
                                 alt="Header Avatar">
                             <span class="d-none d-xl-inline-block ml-1"><?=$_SESSION['username']?></span>
                             <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>

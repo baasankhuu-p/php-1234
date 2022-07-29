@@ -9,7 +9,7 @@ require ROOT . '/inc/db.php';
 // $script = ROOT . '/pages' . $_SERVER['REDIRECT_URL'] . '.php';
 $page = @$_SERVER['REDIRECT_URL'];
 if (empty($page)) {
-    require ROOT . '/pages/home.php';
+    require ROOT . '/pages/sign-in.php';
 } else {
     $script = ROOT . "/pages$page.php";
     //echo $script . "<br>";

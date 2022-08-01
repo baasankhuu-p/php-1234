@@ -16,7 +16,7 @@ $errors = [];
 //     $_SESSION['errors'] = $errors;
 //     redirect('/sign-in');
 // }
-_selectRow($stmt, $count, "select name, pass, phone, type from users where phone=? and pass=?", 'ss', [$phone, $userpassword], $username, $password, $phone, $type);
+_selectRow($stmt, $count, "select idusers, name, pass, phone, type from users where phone=? and pass=?", 'ss', [$phone, $userpassword], $idusers, $username, $password, $phone, $type);
 
 /**
  * 1) session эхлүүлнэ
@@ -25,6 +25,7 @@ _selectRow($stmt, $count, "select name, pass, phone, type from users where phone
  */
 
 if (!empty($username)) {
+    $_SESSION['idusers'] = $idusers;
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
     $_SESSION['phone'] = $phone;

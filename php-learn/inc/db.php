@@ -13,6 +13,7 @@ if (mysqli_connect_errno() === 1049) {
 function _exec($sql, $type, $sqlParam, &$count)
 {
     global $con;
+    // mysqli_report(MYSQLI_REPORT_ALL);
     $stmt = mysqli_prepare($con, $sql);
     mysqli_stmt_bind_param($stmt, $type, ...$sqlParam);
     $success = mysqli_stmt_execute($stmt);

@@ -247,5 +247,13 @@ if ($_SESSION['type'] !== 'Хэрэглэгч' && $_SESSION['type'] !== 'Адм�
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content">
-
             <div class="page-content">
+                <?php if (!empty($_SESSION['errors'])): ?>
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                        <?php foreach ($_SESSION['errors'] as $error): ?>
+                        <li><?=$error?></li>
+                        <?php endforeach;?>
+                    </ul>
+                </div>
+                <?php unset($_SESSION['errors']);endif;?>

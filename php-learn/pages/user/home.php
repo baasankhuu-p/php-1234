@@ -74,13 +74,13 @@ td>i:hover {
                                             <label class="custom-control-label" for="customCheck02"></label>
                                         </div>
                                     </td>
-                                    <td class="px-0 pr-1"><input value="Дэлгүүр" name="torol"
+                                    <td class="px-0 pr-1"><input value="Дэлгүүр" name="turul"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
                                     <td class="px-0 pr-1"><input value="хүнс" name="hariltsagch"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input value="" name="mongo_usuh"
+                                    <td class="px-0 pr-1"><input value="" name="mungu_usuh"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input value="28000" name="mongo_buurah"
+                                    <td class="px-0 pr-1"><input value="28000" name="mungu_buurah"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
                                     <td class="px-0 pr-1"><input value="" name="hurungu_usuh"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
@@ -96,7 +96,7 @@ td>i:hover {
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
                                     <td class="px-0 pr-1"><input value="" name="ur_usuh"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
-                                    <td class="px-0 pr-1"><input value="" name="us_buurah"
+                                    <td class="px-0 pr-1"><input value="" name="ur_buurah"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>
                                     <td class="px-0 pr-1"><input value="" name="orlogo"
                                             class="form-control form-control-sm" type="text" placeholder=""></td>

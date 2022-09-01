@@ -1,12 +1,11 @@
 <?php
-session_start();
 $username = _post('username', 50);
 $phone = _post('phone', 15);
 $email = _post('email', 150);
 $userpassword = _post('userpassword', 50);
 $confirmpassword = _post('confirmpassword', 50);
 $terms = _post('terms');
-
+$type = "Хэрэглэгч";
 /*extract($_POST);//Postoor orj irsen key-iin huvisagchid hadgalna  */
 //Aldaag massiv-d hadgalna
 //Хэрэглэгчийн нэр шаардлага хангаж буй эсэх
@@ -29,8 +28,8 @@ if (mb_strlen($username) < 4) {
 //     $errors[] = 'Нууц үг хоорондоо таарахгүй байна';
 // }
 //ийм утастай хэрэглэгч бүртгэлтэй эсэх
-_selectRow($stmt, $count, 'select count(*) from users where phone = ?', 's', [$phone], $numberOfPhone);
-_selectRow($stmt, $count, 'select count(*) from users where email = ?', 's', [$email], $numberOfemail);
+_selectRow('select count(*) from users where phone = ?', 's', [$phone], $numberOfPhone);
+_selectRow('select count(*) from users where email = ?', 's', [$email], $numberOfemail);
 if ($numberOfPhone > 0 || $numberOfemail > 0) {
     $errors[] = "Дугаар эсвэл имейл бүртгэгдсэн байна";
 }
@@ -48,17 +47,19 @@ if (sizeof($errors) > 0) {
     redirect("/sign-up");
 } else {
     _exec(
-        "insert into users set name=?, pass=?, phone=?, email=?, type = 'Хэрэглэгч'",
-        'ssss',
-        [$username, $userpassword, $phone, $email],
-        $count);
+        "insert into users set name=?, pass=?, phone=?, email=?, type = ?, create_date=now()",
+        'sssss',
+        [$username, $userpassword, $phone, $email, $type],
+        $count, $insert_id);
     // _exec(
     //     "insert into users set name=?, pass=?, phone=?, email=?, type = 'Админ'",
     //     'ssss',
     //     [$username, $userpassword, $phone, $email],
     //     $count);
+    $_SESSION['idusers'] = $insert_id;
     $_SESSION['username'] = $username;
     $_SESSION['phone'] = $phone;
     $_SESSION['email'] = $email;
+    $_SESSION['type'] = $type;
     redirect("/user/home");
 }

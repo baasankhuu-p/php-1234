@@ -1,0 +1,4 @@
+[Fri Aug 12 00:16:06.893567 2022] [php:warn] [pid 10392:tid 1916] [client 127.0.0.1:56717] PHP Warning:  Undefined array key "type" in D:\\php-1234\\php-learn\\pages\\hfpages\\header.php on line 2
+[Fri Aug 12 00:16:06.893567 2022] [php:warn] [pid 10392:tid 1916] [client 127.0.0.1:56717] PHP Warning:  Undefined array key "type" in D:\\php-1234\\php-learn\\pages\\hfpages\\header.php on line 2
+[Fri Aug 12 00:16:11.367606 2022] [php:warn] [pid 10392:tid 1908] [client 127.0.0.1:56726] PHP Warning:  Undefined array key "type" in D:\\php-1234\\php-learn\\pages\\hfpages\\header.php on line 2
+[Fri Aug 12 00:16:11.367606 2022] [php:warn] [pid 10392:tid 1908] [client 127.0.0.1:56726] PHP Warning:  Undefined array key "type" in D:\\php-1234\\php-learn\\pages\\hfpages\\header.php on line 2

@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!doctype html>
 <html lang="en">
 
@@ -58,8 +55,8 @@ session_start();
                                             <span class="input-group-text" id="basic-addon1"><i
                                                     class="far fa-user"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" value="Баасанхүү" id="username"
-                                            name="username" placeholder="Нэрээ оруулна уу">
+                                        <input type="text" class="form-control" value="" id="username" name="username"
+                                            placeholder="Нэрээ оруулна уу">
                                     </div>
                                 </div>
 
@@ -70,7 +67,7 @@ session_start();
                                             <span class="input-group-text" id="basic-addon1"><i
                                                     class="fas fa-mobile-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" value="99455432" id="phone" name="phone"
+                                        <input type="text" class="form-control" value="" id="phone" name="phone"
                                             placeholder="Утасаа оруулна уу">
                                     </div>
                                 </div>
@@ -82,8 +79,8 @@ session_start();
                                             <span class="input-group-text" id="basic-addon2"><i
                                                     class="far fa-envelope"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" value="bsk68270@gmail.com" id="email"
-                                            name="email" placeholder="Имейл хаягаа оруулна уу">
+                                        <input type="text" class="form-control" value="" id="email" name="email"
+                                            placeholder="Имейл хаягаа оруулна уу">
                                     </div>
                                 </div>
 
@@ -94,7 +91,7 @@ session_start();
                                             <span class="input-group-text" id="basic-addon3"><i
                                                     class="fas fa-lock"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" value="12345678" id="userpassword"
+                                        <input type="password" class="form-control" value="" id="userpassword"
                                             name="userpassword" placeholder="Нууц үгээ оруулна">
                                     </div>
                                 </div>
@@ -106,9 +103,8 @@ session_start();
                                             <span class="input-group-text" id="basic-addon4"><i
                                                     class="fas fa-key"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" value="12345678"
-                                            id="confirmpassword" name="confirmpassword"
-                                            placeholder="Нууц үгээ давтан оруулна уу">
+                                        <input type="password" class="form-control" value="" id="confirmpassword"
+                                            name="confirmpassword" placeholder="Нууц үгээ давтан оруулна уу">
                                     </div>
                                 </div>
 

@@ -1,7 +1,6 @@
 <?php
-session_start();
-// dd($_SESSION);
-$ognoo = _post('ognoo', 10);
+dd($_SESSION);
+$ognoo = '20' . str_replace('/', '-', _post('ognoo', 8));
 $utga = _post('utga', 255);
 $togtmol = _post('togtmol', 2);
 $turul = _post('turul', 15);
@@ -18,7 +17,6 @@ $ur_usuh = _post('ur_usuh', 10);
 $ur_buurah = _post('ur_buurah', 10);
 $orlogo = _post('orlogo', 10);
 $zardal = _post('zardal', 10);
-
 try {
     $success = _exec("
     insert into transaction set
@@ -66,8 +64,13 @@ try {
         ,
         $count
     );
+    $_SESSION['messages'] = ["$ognoo өдрийн \" $utga\"-утгатай гүйлгээ амжилттай үүслээ"];
 } catch (Exception $e) {
     // echo 'ERROR: ' . $e->getMessage() . ' <br> ' . $e->getFile() . ' <br> ' . $e->getLine();
     $_SESSION['errors'] = ['Таны системд алдаа гарлаа. Та дараа дахин оролдоно уу'];
+} finally {
+    if (isset($e)) {
+        logError($e);
+    }
 }
 redirect('/user/home');

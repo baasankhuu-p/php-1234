@@ -1,4 +1,3 @@
-<?php session_start();?>
 <!doctype html>
 <html lang="en">
 
@@ -48,6 +47,19 @@
                             <?php unset($_SESSION['errors']);endif;?>
 
                             <form class="form-horizontal my-4" method="POST" action="/sign-in-do">
+                                <div class="form-group">
+                                    <label for="username">Төрөл</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i
+                                                    class="mdi mdi-select-place"></i></span>
+                                        </div>
+                                        <select class="form-control" name="type">
+                                            <option>Админ</option>
+                                            <option>Хэрэглэгч</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="form-group">
                                     <label for="username">Утас</label>
@@ -56,7 +68,7 @@
                                             <span class="input-group-text" id="basic-addon1"><i
                                                     class="far fa-user"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" value="99455432" id="phone" name="phone"
+                                        <input type="text" class="form-control" value="" id="phone" name="phone"
                                             placeholder="Дугаараа оруулна уу">
                                     </div>
                                 </div>
@@ -68,7 +80,7 @@
                                             <span class="input-group-text" id="basic-addon2"><i
                                                     class="fa fa-key"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" value="12345678" id="userpassword"
+                                        <input type="password" class="form-control" value="" id="userpassword"
                                             name="userpassword" placeholder="Нууц үгээ оруулна уу">
                                     </div>
                                 </div>

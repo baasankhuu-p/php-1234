@@ -4,19 +4,26 @@
 
 @$con = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 if (mysqli_connect_errno() === 1049) {
-    die("ийм нэртэй баз байхгүй");
+    redirect('/500');
+    // die("ийм нэртэй баз байхгүй");
 } elseif (mysqli_connect_errno() === 1045) {
-    die('Хэрэглэгчийн мэдээлэл буруу байна');
+    // die('Хэрэглэгчийн мэдээлэл буруу байна');
+    redirect('/500');
 } elseif (mysqli_connect_errno()) {
-    die('Алдаа гарлаа: ' . mysqli_connect_error());
+    // die('Алдаа гарлаа: ' . mysqli_connect_error());
+    redirect('/500');
 }
-function _exec($sql, $type, $sqlParam, &$count)
+
+function _exec($sql, $type, $sqlParam, &$count, &$insertid = -1)
 {
     global $con;
     // mysqli_report(MYSQLI_REPORT_ALL);
     $stmt = mysqli_prepare($con, $sql);
     mysqli_stmt_bind_param($stmt, $type, ...$sqlParam);
     $success = mysqli_stmt_execute($stmt);
+    if ($insertid != -1) {
+        $insertid = mysqli_stmt_insert_id($stmt);
+    }
     $count = mysqli_stmt_affected_rows($stmt);
     _close_stmt($stmt);
     return $success;
@@ -36,12 +43,17 @@ function _select(&$stmt, &$count, $sql, $types, $sqlParams, &...$bindParams)
     mysqli_stmt_bind_result($stmt, ...$bindParams);
     return $stmt;
 }
-function _selectRow(&$stmt, &$count, $sql, $types, $sqlParams, &...$bindParams)
+function _selectRow($sql, $types, $sqlParams, &...$bindParams)
 {
     _select($stmt, $count, $sql, $types, $sqlParams, ...$bindParams);
     _fetch($stmt);
 }
-function _selectAll(&$stmt, &$count, $sql, &...$bindParams)
+function _selectRowNoParam($sql, &...$bindParams)
+{
+    _select($stmt, $count, $sql, null, null, ...$bindParams);
+    _fetch($stmt);
+}
+function _selectNoParam(&$stmt, &$count, $sql, &...$bindParams)
 {
     _select($stmt, $count, $sql, null, null, ...$bindParams);
 }
